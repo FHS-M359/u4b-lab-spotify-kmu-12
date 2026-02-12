@@ -1,0 +1,25 @@
+Take On Me,a-ha,Hunting High and Low,225,1985,Synth Pop
+Smells Like Teen Spirit,Nirvana,Nevermind,301,1991,Rock
+Juicy,The Notorious B.I.G.,Ready to Die,300,1994,Hip-Hop
+Mmmbop,Hanson,MmmBop,210,1997,Pop
+Bye Bye Bye,*NSYNC,No Strings Attached,210,2000,Pop
+Fallin',Alicia Keys,Songs in A Minor,210,2001,R&B
+Hey Ya!,Outkast,Speakerboxxx/The Love Below,240,2003,Hip-Hop
+Drop It Like It's Hot,Snoop Dogg,Single,210,2004,Hip-Hop
+SexyBack,Justin Timberlake,FutureSex/LoveSounds,197,2006,Pop
+Umbrella,Rihanna,Good Girl Gone Bad,275,2007,Pop
+Viva La Vida,Coldplay,Viva La Vida,242,2008,Rock
+Poker Face,Lady Gaga,The Fame,235,2009,Pop
+Rolling in the Deep,Adele,21,228,2010,Pop
+Somebody That I Used To Know,Gotye,Making Mirrors,245,2012,Indie
+Get Lucky,Daft Punk,Random Access Memories,248,2013,Electronic
+Happy,Pharrell Williams,G I R L,233,2014,Pop
+Can't Feel My Face,The Weeknd,Beauty Behind the Madness,210,2015,Pop
+One Dance,Drake,Views,173,2016,Hip-Hop
+Shape of You,Ed Sheeran,Divide,233,2017,Pop
+Sunflower,Post Malone,Hollywood's Bleeding,158,2018,Hip-Hop
+Old Town Road,Lil Nas X,7 EP,137,2019,Country Rap
+Dynamite,BTS,Be,199,2020,Pop
+drivers license,Olivia Rodrigo,SOUR,242,2021,Pop
+As It Was,Harry Styles,Harry's House,167,2022,Pop
+Lose Yourself,Eminem,8 Mile,326,2002,Hip-Hop

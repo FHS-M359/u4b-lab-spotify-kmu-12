@@ -14,9 +14,10 @@ public class Song {
     }
 
     public String toString(){
-        String result = String.format("%30s %30s %40s %10d %20s", title, artist, album, year, genre);
+        String result = String.format("%-30s %-30s %-35s %-10d %-20s", title, artist, album, year, genre);
         return result;
     }
     public String getArtist(){return artist;}
+    public int getYear(){return year;}
 
 }

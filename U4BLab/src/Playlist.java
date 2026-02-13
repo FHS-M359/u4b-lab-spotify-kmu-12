@@ -5,10 +5,21 @@ public class Playlist {
     private ArrayList<Song> songs;
 
     public Playlist() throws IOException, FileNotFoundException{
-        songs = readText();
+        readText();
     }
 
-    public ArrayList<Song> readText() throws IOException, FileNotFoundException{
+    public String toString(){
+        String result = String.format("%-30s %-30s %-35s %-10s %-20s", "Title", "Artist", "Album", "Year", "Genre");
+        result += "\n----------------------------------------------------------------------------------------" +
+                "--------------------------------";
+        result += "\n";
+        for(Song a: songs){
+            result += a.toString() + "\n";
+        }
+        return result;
+    }
+
+    public void readText() throws IOException, FileNotFoundException{
         Scanner inFile = new Scanner(new File("spotify_unique_years_artists.txt"));
         ArrayList<Song> list = new ArrayList<Song>();
         while(inFile.hasNextLine()){
@@ -24,30 +35,54 @@ public class Playlist {
             Song cancion = new Song(t, art, alb, y, g);
             list.add(cancion);
         }
-        return list;
+        songs = list;
     }
 
-    public ArrayList<Song> sortArtistAZ(){
-        ArrayList<Song> list = songs;
-        for(int i=0; i<list.size(); i++){
-            for(int j=0; j<list.size(); j++){
-                Song a = list.get(i);
-                Song b = list.get(j);
-                if(a.getArtist().substring(0,1).compareToIgnoreCase(b.getArtist().substring(0,1))<0){
-                        if(i<j){
-                            list.remove(i);
-                            list.add(j-1, a);
-                        }
-                        else{
-                            list.remove(i);
-                            list.add(j, a);
-                        }
+    public void sortArtistAZ(){
+        for(int i=0; i<songs.size(); i++){
+            for(int j=0; j<songs.size(); j++){
+                Song a = songs.get(i);
+                Song b = songs.get(j);
+                if(a.getArtist().substring(0,1).compareToIgnoreCase(b.getArtist().substring(0,1))<=0){
+                    songs.remove(i);
+                    if(i<j){
+                        songs.add(j-1, a);
+                        i--;
+                    }
+                    else{
+                        songs.add(j, a);
+                    }
+                    j=songs.size();
                 }
-                if(j==list.size()-1){
-
+                if(j==songs.size()-1){
+                    songs.add(songs.remove(i));
                 }
             }
-            i--;
         }
     }
+
+    public void sortYear(){
+        for(int i=0; i<songs.size(); i++){
+            for(int j=0; j<songs.size(); j++){
+                Song a = songs.get(i);
+                Song b = songs.get(j);
+                if(a.getYear()<=b.getYear()){
+                    songs.remove(i);
+                    if(i<j){
+                        songs.add(j-1, a);
+                        i--;
+                    }
+                    else{
+                        songs.add(j, a);
+                    }
+                    j=songs.size();
+                }
+                if(j==songs.size()-1){
+                    songs.add(songs.remove(i));
+                }
+            }
+        }
+    }
+
+
 }

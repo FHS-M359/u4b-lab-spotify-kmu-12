@@ -41,23 +41,32 @@ public class Playlist {
     public void sortArtistAZ(){
         for(int i=0; i<songs.size(); i++){
             for(int j=0; j<songs.size(); j++){
-                Song a = songs.get(i);
-                Song b = songs.get(j);
-                if(a.getArtist().substring(0,1).compareToIgnoreCase(b.getArtist().substring(0,1))<=0){
-                    songs.remove(i);
-                    if(i<j){
-                        songs.add(j-1, a);
-                        i--;
+                if(j!=i){
+                    Song a = songs.get(i);
+                    Song b = songs.get(j);
+                    if(a.getArtist().toUpperCase().compareTo(b.getArtist().toUpperCase())<=0){
+                        songs.remove(i);
+                        if(i<j){
+                            songs.add(j-1, a);
+                        }
+                        else{
+                            songs.add(j, a);
+                            i--;
+                        }
+                        j=songs.size();
                     }
-                    else{
-                        songs.add(j, a);
+                    if(j==songs.size()-1){
+                        songs.add(songs.remove(i));
                     }
-                    j=songs.size();
-                }
-                if(j==songs.size()-1){
-                    songs.add(songs.remove(i));
                 }
             }
+        }
+    }
+
+    public void sortArtistZA(){
+        sortArtistAZ();
+        for(int i=0; i<=songs.size()/2; i++){
+            songs.set(i, songs.set(songs.size()-i-1, songs.get(i)));
         }
     }
 

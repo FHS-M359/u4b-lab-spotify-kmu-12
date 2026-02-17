@@ -28,15 +28,30 @@ public class SpotifyTester {
                     System.out.print("Invalid input. Enter a number between 1 and 7: ");
                     scan.nextLine();
                 }
-
             }
+
             if(choice==7){gameContinuity = false;}
             else{
                 Playlist playList = new Playlist();
-                if(choice==1){playList.sortArtistAZ();}
-                else if(choice==2){playList.sortArtistZA();}
-                else if(choice==3){playList.sortYear();}
-                System.out.println("\n" + playList.toString());
+                if(choice==1){
+                    playList.sortArtistAZ();
+                    System.out.println("\n" + playList.toString());
+                }
+                else if(choice==2){
+                    playList.sortArtistZA();
+                    System.out.println("\n" + playList.toString());}
+                else if(choice==3){
+                    playList.sortYear();
+                    System.out.println("\n" + playList.toString());
+                }
+                else if(choice==5){
+                    System.out.print("\nEnter genre to search: ");
+                    String input = "";
+                            scan.nextLine();
+                            input = scan.nextLine();
+                    playList.searchGenre(input);
+                    System.out.println("\n");
+                }
                 everythingsFine = false;
             }
 

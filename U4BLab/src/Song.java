@@ -19,5 +19,6 @@ public class Song {
     }
     public String getArtist(){return artist;}
     public int getYear(){return year;}
+    public String getGenre(){return genre;}
 
 }

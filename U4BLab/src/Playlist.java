@@ -70,6 +70,15 @@ public class Playlist {
         }
     }
 
+    public void searchGenre(String genre){
+        for(Song song: songs){
+            if(song.getGenre().equalsIgnoreCase(genre)){
+                System.out.println(song.toString());
+            }
+        }
+
+    }
+
     public void sortYear(){
         for(int i=0; i<songs.size(); i++){
             for(int j=0; j<songs.size(); j++){

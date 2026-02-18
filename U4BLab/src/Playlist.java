@@ -39,34 +39,30 @@ public class Playlist {
     }
 
     public void sortArtistAZ(){
-        for(int i=0; i<songs.size(); i++){
-            for(int j=0; j<songs.size(); j++){
-                if(j!=i){
-                    Song a = songs.get(i);
-                    Song b = songs.get(j);
-                    if(a.getArtist().toUpperCase().compareTo(b.getArtist().toUpperCase())<=0){
-                        songs.remove(i);
-                        if(i<j){
-                            songs.add(j-1, a);
-                        }
-                        else{
-                            songs.add(j, a);
-                            i--;
-                        }
-                        j=songs.size();
-                    }
-                    if(j==songs.size()-1){
-                        songs.add(songs.remove(i));
-                    }
+        for(int i=0; i<songs.size()-1; i++){
+            int minIndex = i;
+            for(int j=i+1; j<songs.size(); j++){
+                Song a = songs.get(minIndex);
+                Song b = songs.get(j);
+                if(a.getArtist().compareToIgnoreCase(b.getArtist())>0){
+                    minIndex = j;
                 }
             }
+            songs.set(i, songs.set(minIndex, songs.get(i)));
         }
     }
 
     public void sortArtistZA(){
-        sortArtistAZ();
-        for(int i=0; i<=songs.size()/2; i++){
-            songs.set(i, songs.set(songs.size()-i-1, songs.get(i)));
+        for(int i=0; i<songs.size()-1; i++){
+            int maxIndex = i;
+            for(int j=i+1; j<songs.size(); j++){
+                Song a = songs.get(maxIndex);
+                Song b = songs.get(j);
+                if(a.getArtist().compareToIgnoreCase(b.getArtist())<0){
+                    maxIndex = j;
+                }
+            }
+            songs.set(i, songs.set(maxIndex, songs.get(i)));
         }
     }
 

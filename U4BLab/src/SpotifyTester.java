@@ -6,7 +6,9 @@ import java.util.Scanner;
 public class SpotifyTester {
     public static void main(String[] args) throws IOException, FileNotFoundException {
         Scanner scan = new Scanner(System.in);
+        // controls the while loop that checks if the input from user is between 1-7
         boolean everythingsFine = false;
+        // keeps the game going until the user quits
         boolean gameContinuity = true;
         while(gameContinuity){
             System.out.println("=~=~= Spotify MENU =~=~=");

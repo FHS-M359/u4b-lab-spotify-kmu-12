@@ -13,6 +13,9 @@ public class Song {
         genre = g;
     }
 
+    // Description: formats information into a String
+    // Input: none
+    // Output: String with complementary uniform spacing
     public String toString(){
         String result = String.format("%-30s %-30s %-35s %-10d %-20s", title, artist, album, year, genre);
         return result;

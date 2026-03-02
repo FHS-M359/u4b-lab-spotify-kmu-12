@@ -58,6 +58,9 @@ public class SpotifyTester {
                     playList.searchGenre(input);
                     System.out.println("\n");
                 }
+                else if(choice==6){
+                    System.out.println(playList.toString());
+                }
                 everythingsFine = false;
             }
 
